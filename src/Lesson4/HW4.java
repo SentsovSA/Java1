@@ -139,9 +139,9 @@ public class HW4 {
             String winMessage;
 
             if (symbol == DOT_HUMAN) {
-                winMessage = "Ура! Мы победили!";
+                winMessage = "Победил игрок!";
             } else {
-                winMessage = "Восстание близко. AI победил.";
+                winMessage = "Победа компьютера!";
             }
 
             isEnd = true;
@@ -164,33 +164,33 @@ public class HW4 {
         if (SIZE >= 3 && SIZE <= 5) winCount = 3;
         if (SIZE >= 6 && SIZE <= 9) winCount = 4;
         if (SIZE >= 10) winCount = 5;
-        int winCountSymbolsH;
-        int winCountSymbolsV;
-        int winCountDMain = 0;
-        int winCountDSecond = 0;
+        int winCountSymbolsHorizont;
+        int winCountSymbolsVertic;
+        int winCountDiagonalMain = 0;
+        int winCountDiagonalSecond = 0;
         int winCountD = 0;
         for (int i = 0; i < SIZE; i++) {
-            winCountSymbolsH = 0;
-            winCountSymbolsV = 0;
+            winCountSymbolsHorizont = 0;
+            winCountSymbolsVertic = 0;
             for (int j = 0; j < SIZE; j++){
                 if (map[i][j] == symbol){
-                    winCountSymbolsH++;
-                    if (winCountSymbolsH == winCount) return true;
+                    winCountSymbolsHorizont++;
+                    if (winCountSymbolsHorizont == winCount) return true;
                 }
                 if(map[j][i] == symbol){
-                    winCountSymbolsV++;
-                    if(winCountSymbolsV == winCount) return true;
+                    winCountSymbolsVertic++;
+                    if(winCountSymbolsVertic == winCount) return true;
                 }
             }
             if(map[i][i] == symbol){
-                winCountDMain++;
-                if(winCountDMain == winCount) return true;
-                else winCountDMain = 0;
+                winCountDiagonalMain++;
+                if(winCountDiagonalMain == winCount) return true;
+                else winCountDiagonalMain = 0;
             }
             if(map[i][SIZE - 1 - i] == symbol){
-                winCountDSecond++;
-                if(winCountDSecond == winCount) return true;
-                else winCountDSecond = 0;
+                winCountDiagonalSecond++;
+                if(winCountDiagonalSecond == winCount) return true;
+                else winCountDiagonalSecond =0;
             }
         }
     return false;
