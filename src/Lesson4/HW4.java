@@ -164,22 +164,22 @@ public class HW4 {
         if (SIZE >= 3 && SIZE <= 5) winCount = 3;
         if (SIZE >= 6 && SIZE <= 9) winCount = 4;
         if (SIZE >= 10) winCount = 5;
-        int winCountSymbolsHorizontal;
-        int winCountSymbolsVertical;
+        int winCountSymbolsHorizont;
+        int winCountSymbolsVertic;
         int winCountDiagonalMain = 0;
         int winCountDiagonalSecond = 0;
         int winCountD = 0;
         for (int i = 0; i < SIZE; i++) {
-            winCountSymbolsHorizontal = 0;
-            winCountSymbolsVertical = 0;
+            winCountSymbolsHorizont = 0;
+            winCountSymbolsVertic = 0;
             for (int j = 0; j < SIZE; j++){
                 if (map[i][j] == symbol){
-                    winCountSymbolsHorizontal++;
-                    if (winCountSymbolsHorizontal == winCount) return true;
+                    winCountSymbolsHorizont++;
+                    if (winCountSymbolsHorizont == winCount) return true;
                 }
                 if(map[j][i] == symbol){
-                    winCountSymbolsVertical++;
-                    if(winCountSymbolsVertical == winCount) return true;
+                    winCountSymbolsVertic++;
+                    if(winCountSymbolsVertic == winCount) return true;
                 }
             }
             if(map[i][i] == symbol){
