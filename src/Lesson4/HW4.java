@@ -139,9 +139,9 @@ public class HW4 {
             String winMessage;
 
             if (symbol == DOT_HUMAN) {
-                winMessage = "Ура! Мы победили!";
+                winMessage = "Победил игрок!";
             } else {
-                winMessage = "Восстание близко. AI победил.";
+                winMessage = "Победа компьютера!";
             }
 
             isEnd = true;
@@ -164,22 +164,22 @@ public class HW4 {
         if (SIZE >= 3 && SIZE <= 5) winCount = 3;
         if (SIZE >= 6 && SIZE <= 9) winCount = 4;
         if (SIZE >= 10) winCount = 5;
-        int winCountSymbolsH;
-        int winCountSymbolsV;
+        int winCountSymbolsHorizontal;
+        int winCountSymbolsVertical;
         int winCountDiagonalMain = 0;
         int winCountDiagonalSecond = 0;
         int winCountD = 0;
         for (int i = 0; i < SIZE; i++) {
-            winCountSymbolsH = 0;
-            winCountSymbolsV = 0;
+            winCountSymbolsHorizontal = 0;
+            winCountSymbolsVertical = 0;
             for (int j = 0; j < SIZE; j++){
                 if (map[i][j] == symbol){
-                    winCountSymbolsH++;
-                    if (winCountSymbolsH == winCount) return true;
+                    winCountSymbolsHorizontal++;
+                    if (winCountSymbolsHorizontal == winCount) return true;
                 }
                 if(map[j][i] == symbol){
-                    winCountSymbolsV++;
-                    if(winCountSymbolsV == winCount) return true;
+                    winCountSymbolsVertical++;
+                    if(winCountSymbolsVertical == winCount) return true;
                 }
             }
             if(map[i][i] == symbol){
