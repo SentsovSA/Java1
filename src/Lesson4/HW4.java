@@ -187,10 +187,6 @@ public class HW4 {
                 if(winCountDMain == winCount) return true;
                 else winCountDMain = 0;
             }
-            if(map[i][i] == symbol){
-                winCountD++;
-                if (winCountD == winCount) return true;
-            }
             if(map[i][SIZE - 1 - i] == symbol){
                 winCountDSecond++;
                 if(winCountDSecond == winCount) return true;
