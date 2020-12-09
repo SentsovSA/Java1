@@ -166,8 +166,8 @@ public class HW4 {
         if (SIZE >= 10) winCount = 5;
         int winCountSymbolsH;
         int winCountSymbolsV;
-        int winCountDMain = 0;
-        int winCountDSecond = 0;
+        int winCountDiagonalMain = 0;
+        int winCountDiagonalSecond = 0;
         int winCountD = 0;
         for (int i = 0; i < SIZE; i++) {
             winCountSymbolsH = 0;
@@ -183,14 +183,14 @@ public class HW4 {
                 }
             }
             if(map[i][i] == symbol){
-                winCountDMain++;
-                if(winCountDMain == winCount) return true;
-                else winCountDMain = 0;
+                winCountDiagonalMain++;
+                if(winCountDiagonalMain == winCount) return true;
+                else winCountDiagonalMain = 0;
             }
             if(map[i][SIZE - 1 - i] == symbol){
-                winCountDSecond++;
-                if(winCountDSecond == winCount) return true;
-                else winCountDSecond = 0;
+                winCountDiagonalSecond++;
+                if(winCountDiagonalSecond == winCount) return true;
+                else winCountDiagonalSecond =0;
             }
         }
     return false;
