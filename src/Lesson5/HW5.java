@@ -8,8 +8,6 @@ public class HW5 {
 
     private static final int MIN_AGE = 40;
 
-    private static final Random ageRandom = new Random();
-
 
     public static void main(String[] args) {
 
@@ -52,8 +50,11 @@ public class HW5 {
 
 
 
-        for (int i = 0; i < EMPLOYEE_QUANTITY; i++) {
-            empArray[i].printInfo();
+        for (Employee employee: empArray) {
+            if(employee.getAge() > MIN_AGE){
+                employee.printInfo();
+            }
+
         }
 
 
