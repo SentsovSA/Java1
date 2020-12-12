@@ -18,6 +18,14 @@ public abstract class Animal {
         this.jumpHeight = jumpHeight;
     }
 
+    public Animal(String petName, String color, int age, int runDistance, double jumpHeight) {
+        this.petName = petName;
+        this.color = color;
+        this.age = age;
+        this.runDistance = runDistance;
+        this.jumpHeight = jumpHeight;
+    }
+
     public void printInfo() {
         System.out.println(this);
     }
