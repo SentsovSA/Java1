@@ -25,7 +25,7 @@ public class HW6 {
                 boolean swim = animal1.swim(10);
                 boolean run = animal1.run(300);
                 boolean jump = animal1.jump(1);
-                if (!swim){
+                if (swim == false){
                     System.out.println("Кошки не умеют плавать");
                 }
                 System.out.println("Результат: swim: " + swim);
