@@ -2,15 +2,15 @@ package Lesson7.HW7;
 
 public class Test {
     public static void main(String[] args) {
-        Cat cat = new Cat("Барсик", 0, 15);
-        Plate plate = new Plate();
+        Cat[] cats = {new Cat("Барсик", 15), new Cat ("Васька", 20), new Cat ("Игорь", 18)};
+        Plate plate = new Plate(53);
 
 
-        plate.addFood(40);
+        for(Cat cat : cats) {
+            cat.eat(plate);
 
-        cat.eat(plate);
-
-        cat.info();
+            cat.printInfo();
+        }
 
         plate.printInfo();
     }

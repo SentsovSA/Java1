@@ -6,19 +6,22 @@ public class Cat {
     protected boolean satiety;
     protected int maxSatiety;
 
-    public Cat(String name, int satiety, int maxSatiety) {
+    public Cat(String name, int maxSatiety) {
         this.name = name;
         this.satiety = false;
         this.maxSatiety = maxSatiety;
     }
 
-    public void info() {
-        String isHungry = !satiety ? "голоден" : "сыт";
-        System.out.println(name + ": " + isHungry);
-    }
 
     public void eat(Plate plate) {
-        plate.decreaseFood(0);
+       if (!satiety && plate.decreaseFood(maxSatiety)){
+           satiety = true;
+       }
+    }
+
+    public void printInfo() {
+        String isHungry = satiety ? "сыт" : "голоден";
+        System.out.println(name + ": " + isHungry);
     }
 
 }
